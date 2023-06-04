@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import SearchBox from '../../SearchBox/SearchBox';
-import Container from '../../Container/Container';
+import SearchBox from '../../components/SearchBox/SearchBox';
+import Container from '../../components/Container/Container';
+
 const Movies = () => {
   return (
     <main>

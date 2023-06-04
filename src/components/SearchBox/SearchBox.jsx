@@ -1,5 +1,11 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
+import {
+  SearchForm,
+  SearchFormButton,
+  SearchFormButtonLabel,
+  SearchFormInput,
+} from './SearchBox.styled';
 
 const SearchBox = () => {
   const [searchQuery, setSearchQuery] = useSearchParams();
@@ -14,8 +20,8 @@ const SearchBox = () => {
     setSearchQuery({ movieId: movieIdValue });
   };
   return (
-    <form>
-      <input
+    <SearchForm>
+      <SearchFormInput
         type="text"
         autoComplete="off"
         name="search"
@@ -24,10 +30,10 @@ const SearchBox = () => {
         value={movieId}
         onChange={updateSearchQuery}
       />
-      <button type="submit">
-        <span>Search</span>
-      </button>
-    </form>
+      <SearchFormButton type="submit">
+        <SearchFormButtonLabel>Search</SearchFormButtonLabel>
+      </SearchFormButton>
+    </SearchForm>
   );
 };
 

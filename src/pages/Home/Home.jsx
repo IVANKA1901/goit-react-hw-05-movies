@@ -1,11 +1,28 @@
 import React from 'react';
-import Container from '../../Container/Container';
+import { TrendTittle } from './Home.styled';
+import Container from '../../components/Container/Container';
+import { fetchTrendingMovies } from '../../services/Api';
+import { useState, useEffect } from 'react';
+import MovieList from '../../components/Movie/MovieList/MovieList';
 
 const Home = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    try {
+      fetchTrendingMovies().then(data => {
+        setMovies(data.results);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
     <main>
       <Container>
-        <h1>Trending today</h1>
+        <TrendTittle>Trending today</TrendTittle>
+        {movies.length > 0 && <MovieList movies={movies} />}
       </Container>
     </main>
   );
