@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Item, Link, MovieName } from '../Movie.styled';
+
 import { useLocation } from 'react-router-dom';
 
 function MovieItem({ id, title, poster_path }) {
