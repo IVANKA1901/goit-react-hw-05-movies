@@ -25,6 +25,7 @@ export const List = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  margin-top: 50px;
 `;
 
 export const Item = styled.li`

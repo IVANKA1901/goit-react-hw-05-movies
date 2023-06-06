@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <main>
       <Container>
-        <TrendTittle>Trending today</TrendTittle>
+        <TrendTittle>Trending today 🍿</TrendTittle>
         {movies.length > 0 && <MovieList movies={movies} />}
         {isLoading && <Loader />}
       </Container>

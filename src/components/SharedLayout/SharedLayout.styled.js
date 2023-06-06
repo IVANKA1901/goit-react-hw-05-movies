@@ -19,3 +19,16 @@ export const Link = styled(NavLink)`
     background-color: #a65e51;
   }
 `;
+
+export const FullPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #52acff;
+  background-image: linear-gradient(75deg, #52acff 25%, #ffe32c 100%);
+
+  text-shadow: 2px 2px 4px rgb(46 43 43 / 80%);
+`;
