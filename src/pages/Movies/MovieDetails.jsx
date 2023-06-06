@@ -61,7 +61,7 @@ const MovieDetails = () => {
             <Tittle>{title ? title : 'No Information'}</Tittle>
             <Text>
               <TittleText>User Score: </TittleText>
-              {vote_average ? vote_average * 10 : 0}%
+              {vote_average ? Math.round(vote_average * 10) : 0}%
             </Text>
             <Text>
               <TittleText>Overview: </TittleText>
