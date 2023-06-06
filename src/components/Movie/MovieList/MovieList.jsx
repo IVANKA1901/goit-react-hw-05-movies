@@ -1,7 +1,6 @@
 import React from 'react';
 import { List } from '../Movie.styled';
 import PropTypes from 'prop-types';
-
 import MovieItem from '../MovieItem/MovieItem';
 
 const MovieList = ({ movies }) => {
