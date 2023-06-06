@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_05_movies=self.webpackChunkgoit_react_hw_05_movies||[]).push([[520],{4520:function(t,e,r){r.r(e);r(2791);var i=r(184);e.default=function(){return(0,i.jsx)("img",{width:"500",src:"../img/5203299.jpg",alt:"Error 404. Not Found"})}}}]);
+//# sourceMappingURL=520.c72ba894.chunk.js.map
