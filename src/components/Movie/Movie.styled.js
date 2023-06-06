@@ -7,15 +7,16 @@ export const Link = styled(NavLink)`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  padding: 10px;
+  /* padding: 2px; */
   border-radius: 5px;
-  border-radius: 4px;
   color: black;
   font-weight: 500;
-
+  transition: all 0.2s ease-in-out;
   &:hover {
     color: black;
-    background-color: #a65e51;
+    background-color: white;
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px rgba(1, 1, 1, 1);
   }
 `;
 
@@ -38,4 +39,5 @@ export const MovieName = styled.p`
   color: black;
   background-color: beige;
   border-radius: 5px;
+  box-shadow: 0 5px 10px rgb(28 27 27);
 `;

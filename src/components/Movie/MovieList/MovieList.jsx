@@ -1,7 +1,7 @@
 import React from 'react';
 import { List } from '../Movie.styled';
 import PropTypes from 'prop-types';
-import MovieItem from '../MovieItem/Movieitem';
+import MovieItem from '../MovieItem/MovieItem';
 
 const MovieList = ({ movies }) => {
   return (
@@ -12,6 +12,7 @@ const MovieList = ({ movies }) => {
     </List>
   );
 };
+
 export default MovieList;
 
 MovieList.propTypes = {

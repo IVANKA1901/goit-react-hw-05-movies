@@ -1,5 +1,4 @@
-import React from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React, { useState } from 'react';
 import {
   SearchForm,
   SearchFormButton,
@@ -7,28 +6,28 @@ import {
   SearchFormInput,
 } from './SearchBox.styled';
 
-const SearchBox = () => {
-  const [searchQuery, setSearchQuery] = useSearchParams();
-  const movieId = searchQuery.get('movieId') ?? '';
+const SearchBox = ({ onSubmit, query }) => {
+  const [value, setValue] = useState(query);
 
-  const updateSearchQuery = evt => {
-    const movieIdValue = evt.target.value;
-
-    if (movieIdValue === '') {
-      return setSearchQuery({});
-    }
-    setSearchQuery({ movieId: movieIdValue });
+  const handleInputChange = e => {
+    setValue(e.target.value);
   };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    onSubmit(value);
+    setValue('');
+  };
+
   return (
-    <SearchForm>
+    <SearchForm onSubmit={handleSubmit}>
       <SearchFormInput
         type="text"
         autoComplete="off"
-        name="search"
         autoFocus
-        placeholder="Search images and photos"
-        value={movieId}
-        onChange={updateSearchQuery}
+        placeholder="Search movies"
+        value={value}
+        onChange={handleInputChange}
       />
       <SearchFormButton type="submit">
         <SearchFormButtonLabel>Search</SearchFormButtonLabel>

@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Item, Link, MovieName } from '../Movie.styled';
+import { useLocation } from 'react-router-dom';
 
 function MovieItem({ id, title, poster_path }) {
-  const viewPoster = poster_path => {
-    if (poster_path === null) {
-      return 'https://wipfilms.net/wp-content/data/posters/tt0338683.jpg';
-    }
-    return `https://image.tmdb.org/t/p/w300${poster_path}`;
-  };
+  const location = useLocation();
 
   return (
-    <Item>
-      <Link to={`/movies/${id}`}>
+    <Item key={id}>
+      <Link to={`/movies/${id}`} state={{ from: location }}>
         <img
-          src={`${viewPoster(poster_path)}`}
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w300${poster_path}`
+              : `https://wipfilms.net/wp-content/data/posters/tt0338683.jpg`
+          }
           alt={title}
-          width="300"
-          height="450"
+          width="250"
+          height="350"
         />
         <MovieName>{title}</MovieName>
       </Link>
