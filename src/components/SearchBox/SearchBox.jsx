@@ -15,6 +15,7 @@ const SearchBox = ({ onSubmit, query }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
     onSubmit(value);
     setValue('');
   };
